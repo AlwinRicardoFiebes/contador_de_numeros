@@ -22,6 +22,8 @@
             padding: 20px;
             border-radius: 5px;
             text-align: center;
+            box-shadow: 5px 10px black;
+
         }
 
         p {
@@ -34,6 +36,7 @@
         <h1>Contador</h1>
         <p id="resultado"></p>
         <button onclick="diminuir()">menos</button>
+        <button onclick="resetar()">zerar</button>
         <button onclick="aumentar()">mais</button>
     </section>
     
@@ -46,9 +49,18 @@
         mostrarNaTela()  
     }   
 
+    function resetar() {
+        numero = 0
+        mostrarNaTela()
+    }
+
     function diminuir() {
         numero--
-       mostrarNaTela()
+        mostrarNaTela()
+    }
+    
+    if(numero < 0) {
+        valor.style.color = '#ba215a';
     }
 
     function mostrarNaTela() {
